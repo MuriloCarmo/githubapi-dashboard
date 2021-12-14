@@ -22,10 +22,40 @@ import {
 import MoveToInboxIcon from '@material-ui/icons/MoveToInbox';
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
+import React from "react";
+
+type IProps = {
+    name: string,
+    stars: number,
+    created_at: string,
+    description: string,
+    html_url: string,
+    forks: number,
+    onClick: () => void;
+}
+
+export const RepositoriesArea: React.FC<IProps> = ({
+                                                       name,
+                                                       stars,
+                                                       created_at,
+                                                       description,
+                                                       html_url,
+                                                       forks,
+                                                       onClick
+                                                   }) => {
+
+    function formatDateToDMY(dateString: string) {
+        const date = new Date(dateString);
+        let d = date.getDate();
+        let m = date.getMonth() + 1; //Month from 0 to 11
+        let y = date.getFullYear();
+        return '' + (d <= 9 ? '0' + d : d) + '/' + (m <= 9 ? '0' + m : m) + '/' + y;
+    }
+
+    const date = formatDateToDMY(created_at);
 
 
-export const RepositoriesArea = () => {
-
+    // @ts-ignore
     return (
         <>
             <RepositoriesAreaContent>
@@ -37,30 +67,29 @@ export const RepositoriesArea = () => {
 
                     <RepositoriesAreaMainHeader>
                         <RepositoriesText>
-                            REACTJS
+                            {name.toUpperCase()}
                         </RepositoriesText>
                         <RepositoriesAreaMainHeaderButton>
                             STARS
                         </RepositoriesAreaMainHeaderButton>
                         <RepositoriesAreaMainHeaderValue>
-                            450
+                            {stars}
                         </RepositoriesAreaMainHeaderValue>
                         <RepositoriesAreaMainHeaderTime>
-                            Today 10:45 AM
+                            {`Criado em: ${date}`}
                         </RepositoriesAreaMainHeaderTime>
                     </RepositoriesAreaMainHeader>
 
                     <RepositoriesAreaMainBody>
                         <LocalOfferIcon/>
                         <RepositoriesAreaMainText>
-                            Description: A declarative, efficient, and flexible JavaScript library for building user
-                            interfaces.
+                            Description: {description}
                         </RepositoriesAreaMainText>
                     </RepositoriesAreaMainBody>
 
                     <RepositoriesAreaMainFooter>
                         <RepositoriesAreaMainFooterLink href={'teste'}>
-                            URL:https://github.com/facebook/react
+                            URL:{html_url}
                         </RepositoriesAreaMainFooterLink>
 
                     </RepositoriesAreaMainFooter>
@@ -75,13 +104,14 @@ export const RepositoriesArea = () => {
                     </RepositoriesAreaDetailsHeader>
 
                     <RepositoriesAreaDetailsBody>
-                        <RepositoriesAreaDetailsBodyText>36283</RepositoriesAreaDetailsBodyText>
+                        <RepositoriesAreaDetailsBodyText>{forks}</RepositoriesAreaDetailsBodyText>
 
                     </RepositoriesAreaDetailsBody>
 
                     <RepositoriesAreaDetailsFooter>
-                        <RepositoriesAreaDetailsFooterButton>SALVAR</RepositoriesAreaDetailsFooterButton>
-
+                        <RepositoriesAreaDetailsFooterButton
+                            onClick={onClick}
+                        >SALVAR</RepositoriesAreaDetailsFooterButton>
                     </RepositoriesAreaDetailsFooter>
 
                 </ReposioriesAreaDetails>
