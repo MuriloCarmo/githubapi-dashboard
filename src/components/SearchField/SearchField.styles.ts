@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const SearchArea = styled.div`
-  margin: 20px 20px;
+  margin-bottom: 15px;
   display: flex;
 `;
 
 export const SearchSelect = styled.div`
   width: 100%;
-  border-radius: 20px;
+  border-radius: 15px;
   background-color: #FFF;
 `;
 
@@ -17,15 +17,13 @@ export const TextField = styled.p`
 
 export const LanguageOption = styled.select`
   width: 100%;
-  
+
   option {
     color: black;
   }
 `;
 
 export const SearchButton = styled.div`
-  width: 150px;
-  height: 150px;
   background-color: #84E0BE;
   width: 95px;
   height: 75px;

@@ -5,5 +5,7 @@ export const HomePageArea = styled.div`
   border-radius: 51px;
   margin-left: -88px;
   background-color: #F5F6FA;
+  padding-left: 61px;
+  padding-right: 61px;
 `;
 

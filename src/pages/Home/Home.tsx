@@ -3,6 +3,7 @@ import {SideArea} from "../../components/SideArea/SideArea";
 import {HomePageArea} from "./Home.styles";
 import {Header} from "../../components/Header/Header";
 import {SearchField} from "../../components/SearchField/SearchField";
+import {RepositoriesArea} from "../../components/RepositoriesArea/RepositoriesArea";
 
 export const Home: React.FunctionComponent<any> = () => {
     return (
@@ -10,7 +11,12 @@ export const Home: React.FunctionComponent<any> = () => {
             <SideArea/>
             <HomePageArea>
                 <Header/>
-                <SearchField />
+                <SearchField/>
+                <RepositoriesArea/>
+                <RepositoriesArea/>
+                <RepositoriesArea/>
+                <RepositoriesArea/>
+                <RepositoriesArea/>
             </HomePageArea>
         </>
     )

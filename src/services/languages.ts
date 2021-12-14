@@ -1,10 +1,6 @@
 //JSON CONTENDO LINGUAGENS DE PROGRAMAÇÃO
-type languages = {
-    urlParam: string,
-    name: string
-};
 
-export const languages:languages[] = [
+export const languages = [
     {
         "urlParam": "1c-enterprise",
         "name": "1C Enterprise"

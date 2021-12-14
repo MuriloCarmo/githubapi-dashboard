@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const PageHeader = styled.header`
   padding: 15px;
   margin-top: 25px;
-  margin-left: 15px
+  margin-bottom: 10px;
 `;
 
 export const HeaderTitle = styled.p`
