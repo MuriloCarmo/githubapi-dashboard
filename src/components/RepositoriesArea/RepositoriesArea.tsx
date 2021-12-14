@@ -80,7 +80,7 @@ export const RepositoriesArea = () => {
                     </RepositoriesAreaDetailsBody>
 
                     <RepositoriesAreaDetailsFooter>
-                        <RepositoriesAreaDetailsFooterButton>DETALHES</RepositoriesAreaDetailsFooterButton>
+                        <RepositoriesAreaDetailsFooterButton>SALVAR</RepositoriesAreaDetailsFooterButton>
 
                     </RepositoriesAreaDetailsFooter>
 
