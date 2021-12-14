@@ -40,7 +40,7 @@ export const Home: React.FunctionComponent = () => {
         try {
             const result = await api.post('/saverepositories', dataRepository);
             if(result.status === 200) {
-                alert(`Sucesos ao Salvar ${dataRepository.name}`);
+                alert(`Sucesso ao Salvar ${dataRepository.name}`);
             } else {
                 alert("Falha ao Salvar");
             }
